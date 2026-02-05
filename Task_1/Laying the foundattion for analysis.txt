@@ -1,0 +1,88 @@
+Defining the Data Analysis Workflow
+1.1 Outline Analysis Steps:
+Phase 1: Data Preparation & Exploration
+
+Load historical Brent oil price data (CSV format)
+
+Convert Date column to datetime format
+
+Handle missing values and data quality checks
+
+Perform initial exploratory data analysis (EDA)
+
+Phase 2: Time Series Analysis
+5. Analyze trends using moving averages
+6. Test stationarity using Augmented Dickey-Fuller test
+7. Examine volatility patterns and clustering
+8. Compute log returns: log(price_t) - log(price_{t-1})
+
+Phase 3: Event Research & Dataset Creation
+9. Research major geopolitical and economic events (2012-2022)
+10. Compile structured event dataset with:
+- Event name
+- Event date (start)
+- Event type (Political, Economic, OPEC, Conflict)
+- Brief description
+- Expected impact direction
+
+Phase 4: Bayesian Change Point Modeling
+11. Implement Bayesian change point detection using PyMC
+12. Define prior distributions for parameters
+13. Run MCMC sampling (NUTS algorithm)
+14. Check convergence diagnostics (R-hat, trace plots)
+
+Phase 5: Interpretation & Association
+15. Extract posterior distributions of change points
+16. Compare detected change points with historical events
+17. Quantify price impacts before/after change points
+18. Formulate causal hypotheses
+
+Phase 6: Dashboard Development
+19. Build Flask backend API with endpoints
+20. Develop React frontend with interactive visualizations
+21. Implement filtering and highlighting features
+22. Test responsiveness across devices
+
+Phase 7: Reporting & Communication
+23. Create comprehensive analysis report
+24. Document assumptions and limitations
+25. Prepare presentation for stakeholders
+
+1.2 Research and Compile Event Data:
+
+Events Dataset Structure:
+
+1.3 State Assumptions and Limitations:
+Key Assumptions:
+
+Brent oil prices reflect global market conditions accurately
+
+Change points represent abrupt structural breaks in price dynamics
+
+Major geopolitical/economic events have immediate price impacts
+
+The single change point model is sufficient for initial analysis
+
+Daily closing prices adequately capture market movements
+
+Critical Limitations:
+
+Correlation vs. Causation: Detected change points may coincide with events but don't prove causation
+
+Omitted Variables: Model doesn't account for other factors (USD strength, inflation, alternative energy)
+
+Time Lag Effects: Some events may have delayed impacts not captured
+
+Model Simplicity: Single change point model may miss multiple or gradual changes
+
+Data Frequency: Daily data may miss intraday volatility events
+
+Communication Channels:
+
+Primary: Interactive React dashboard
+
+Secondary: PDF report (suitable for policymakers)
+
+Supporting: GitHub repository with code and documentation
+
+Presentation: Live demo to stakeholders via video conference
